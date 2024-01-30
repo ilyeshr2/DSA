@@ -1,9 +1,12 @@
 def search(cards, query):
     # Brut force
-    for i in range(len(cards)):
-        if query == cards[i]:
-            return i
-    return 'Item not found'
+    if len(cards)==0:
+        return 'empty arr'
+    else:
+        for i in range(len(cards)):
+            if query == cards[i]:
+                return i
+        return 'Item not found'
 
 cards1 = [6, 4, -5, 3, 6]
 query = 4
@@ -11,14 +14,10 @@ query = 4
 #print(search(cards1, query))
 test={
     'input':{
-        'cards':[6, 4, -5, 3, 6],
+        'cards':[],
         'query': 4
     },
     'output':00
 }
 
-out=test['output']
-result = search(test['input']['cards'],test['input']['query'])
-if result==out:
-    print(result)
-else: print('expected output '+str(out))
+print(search(test['input']['cards'],test['input']['query']))

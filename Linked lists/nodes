@@ -1,0 +1,15 @@
+class LinkNode {
+  previous?: LinkNode;
+  next?: LinkNode;
+  value: any;
+
+  constructor(value: any, previous?: LinkNode, next?: LinkNode) {
+    this.previous = previous;
+    this.next = next;
+    this.value = value;
+  }
+}
+
+let head: LinkNode = new LinkNode(23, undefined, undefined);
+
+console.log(head);

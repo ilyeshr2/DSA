@@ -21,20 +21,16 @@ function mergeInBetween(list1: ListNode | null, a: number, b: number, list2: Lis
     for(let j1=0; j1<b ; j1++){
         j=j.next
     }
-    while(curr){
-        if(curr.next===i){
-            curr.next=list2
-            break
-        }
+
+    while(curr.next!=i){
         curr=curr.next
     }
-    while(list2){
-        if(list2.next===null){
-            list2.next=j.next
-            break
-        }
+    curr.next=list2
+
+    while(list2.next){
         list2=list2.next
     }
+    list2.next=j.next
 
     return list1
 };
